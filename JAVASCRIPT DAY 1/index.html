@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JAVASCRIPT DAY 1</title>
+</head>
+<body>
+<article class="shopList">
+    <h1> Cart Quantity in console</h1>
+    <button onclick="console.log( `Cart Quantity =  ${cartQuantity}`)">
+        Show Quantity in console </button>
+    <button onclick="cartQuantity += 1;
+                     console.log( `Cart Quantity =  ${cartQuantity}`)">
+        Add to cart </button>
+    <button onclick="cartQuantity += 2;
+                     console.log( `Cart Quantity =  ${cartQuantity}`)">
+        +2 products</button>
+    <button onclick="cartQuantity += 3;
+                     console.log( `Cart Quantity =  ${cartQuantity}`)">
+        +3 products</button>
+    <button onclick="cartQuantity = 0;
+                     console.log( 'Cart was reset ')">
+        Reset cart </button>
+    <button onclick=" console.log( `Total price = ${cartQuantity * PRICE}`)">
+        Get total price </button>
+</article>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
