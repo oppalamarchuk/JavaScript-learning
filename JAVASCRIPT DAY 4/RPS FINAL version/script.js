@@ -58,11 +58,14 @@ let score={
     ties:   0
 };
 
-const rock = document.querySelector('.js-rock')
-rock.addEventListener('click',()=>{playWithComputer('Rock')})
+const btnRock = document.querySelector('.js-rock')
+btnRock.addEventListener('click',()=>{playWithComputer('Rock')})
 
-const paper = document.querySelector('.js-paper')
-paper.addEventListener('click',()=>{playWithComputer('Paper')})
+const btnPaper = document.querySelector('.js-paper')
+btnPaper.addEventListener('click',()=>{playWithComputer('Paper')})
 
-const scissors = document.querySelector('.js-scissors')
-scissors.addEventListener('click',()=>{playWithComputer('Scissors')})
+const btnScissors = document.querySelector('.js-scissors')
+btnScissors.addEventListener('click',()=>{playWithComputer('Scissors')})
+
+const btnScore = document.querySelector('.btn-score')
+btnScore.addEventListener('click',()=>{resetScore()})
