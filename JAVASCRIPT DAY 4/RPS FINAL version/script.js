@@ -57,3 +57,12 @@ let score={
     losses: 0,
     ties:   0
 };
+
+const rock = document.querySelector('.js-rock')
+rock.addEventListener('click',()=>{playWithComputer('Rock')})
+
+const paper = document.querySelector('.js-paper')
+paper.addEventListener('click',()=>{playWithComputer('Paper')})
+
+const scissors = document.querySelector('.js-scissors')
+scissors.addEventListener('click',()=>{playWithComputer('Scissors')})
