@@ -10,7 +10,7 @@ btnReset.addEventListener('click',()=>{result = [];displayResult(result) ;displa
 
 const btnSave= document.querySelector('.save');
 btnSave.addEventListener('click',()=>{
-    result.push(count);
+    result.unshift(count);
     count=0;
     displayResult(result)
     displayCount(count)
@@ -19,7 +19,7 @@ btnSave.addEventListener('click',()=>{
 //  Display functions
 function displayResult(arr){
     let result = document.querySelector('.result')
-    result.innerHTML = arr;
+    result.innerHTML = arr.join(" | ");
 }
 function displayCount(count){
     let counter = document.querySelector('.counter')
