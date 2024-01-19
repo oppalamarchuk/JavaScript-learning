@@ -1,3 +1,43 @@
+//    checking if the page has loaded 
+document.addEventListener('DOMContentLoaded', function() {
+
+    const btnScore = document.querySelector('.btn-score')
+    btnScore.addEventListener('click',()=>{resetScore()})
+    
+    const btnRock = document.querySelector('.js-rock')
+    btnRock.addEventListener('click',()=>{playWithComputer('Rock')})
+    
+    const btnPaper = document.querySelector('.js-paper')
+    btnPaper.addEventListener('click',()=>{playWithComputer('Paper')})
+    
+    const btnScissors = document.querySelector('.js-scissors')
+    btnScissors.addEventListener('click',()=>{playWithComputer('Scissors')})
+    
+    document.body.addEventListener('keydown',(event) =>{
+        
+        if(event.key ==='r' || event.key ==='R')
+            playWithComputer('Rock');
+        else if(event.key ==='p' || event.key ==='P')
+            playWithComputer('Paper');
+        else if(event.key ==='s' || event.key ==='S')
+            playWithComputer('Scissors');
+    });
+})
+
+//    Score
+let score={
+    wins:   0,
+    losses: 0,
+    ties:   0
+};
+
+//    Functions
+function playWithComputer(playerMove) {
+    let computerMove = pickComputerMove();
+    displayMoves(playerMove,computerMove);
+    displayWinner(checkWhoIsTheWinner(playerMove, computerMove));
+    displayScore();
+}
 function pickComputerMove(){
     let computerMove= Math.floor(Math.random() * 3 + 1);
 
@@ -28,6 +68,8 @@ function checkWhoIsTheWinner(playerMove, computerMove) {
         return "You lose";
     }
 }
+
+// Display functions
 function displayMoves(playerMove,computerMove){
     document.querySelector('.moves').innerHTML =
         `Your move  
@@ -42,42 +84,11 @@ function displayScore() {
     document.querySelector('.results').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`
 }
 
-function playWithComputer(playerMove) {
-    let computerMove = pickComputerMove();
-    displayMoves(playerMove,computerMove);
-    displayWinner(checkWhoIsTheWinner(playerMove, computerMove));
-    displayScore();
-
-}
+// Reset
 function resetScore() {
     score.wins=0;
     score.losses=0;
     score.ties=0;
     displayScore()
 }
-let score={
-    wins:   0,
-    losses: 0,
-    ties:   0
-};
 
-const btnRock = document.querySelector('.js-rock')
-btnRock.addEventListener('click',()=>{playWithComputer('Rock')})
-
-const btnPaper = document.querySelector('.js-paper')
-btnPaper.addEventListener('click',()=>{playWithComputer('Paper')})
-
-const btnScissors = document.querySelector('.js-scissors')
-btnScissors.addEventListener('click',()=>{playWithComputer('Scissors')})
-
-document.body.addEventListener('keydown',(event) =>{
-    if(event.key ==='r' || event.key ==='R')
-        playWithComputer('Rock');
-    else if(event.key ==='p' || event.key ==='P')
-        playWithComputer('Paper');
-    else if(event.key ==='s' || event.key ==='S')
-        playWithComputer('Scissors');
-});
-
-const btnScore = document.querySelector('.btn-score')
-btnScore.addEventListener('click',()=>{resetScore()})
